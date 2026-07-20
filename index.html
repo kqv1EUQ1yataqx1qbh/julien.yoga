@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,12 +10,30 @@
 <meta property="og:title" content="Berlin Yoga Teacher Julien Balmer" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="Traditional Hatha- and Kundalini-Yoga with seasoned yogi Julien Balmer" />
-<link rel="icon" href="data:,">
+<link rel="icon" href="favicon.ico">
 <style>
+  @font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("fonts/lato-light.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("fonts/lato-bold.woff2") format("woff2");
+  }
+
   :root {
-    --bg-fallback: #382e41;
-    --ink: #f4f1ec;
-    --ink-dim: rgba(244, 241, 236, 0.82);
+    --bg-fallback: #241a2c;
+    --ink: #f5f2ee;
+    --ink-dim: rgba(245, 242, 238, 0.82);
+    --accent: #7a1c46;
+    --accent-hover: #8f2251;
   }
 
   * { box-sizing: border-box; }
@@ -25,12 +44,10 @@
   }
 
   body {
-    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     color: var(--ink);
     background-color: var(--bg-fallback);
-    background-image:
-      linear-gradient(180deg, rgba(30, 22, 38, 0.55) 0%, rgba(30, 22, 38, 0.75) 100%),
-      url("bg.jpg");
+    background-image: url("bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,53 +55,62 @@
     min-height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 6vh 6vw;
-    text-align: center;
+    text-align: left;
   }
 
   main {
-    max-width: 34rem;
+    max-width: 30rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
   }
 
   h1 {
-    font-weight: 400;
-    font-size: clamp(1.9rem, 5vw, 2.75rem);
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    letter-spacing: 0.14em;
+    line-height: 1.4;
     margin: 0 0 1.5rem;
   }
 
   p {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-weight: 300;
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--ink-dim);
-    margin: 0 0 2.25rem;
+    margin: 0 0 2rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   a.email {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     display: inline-block;
-    padding: 0.85em 2em;
-    border: 1px solid var(--ink);
-    border-radius: 2px;
+    padding: 0.9em 2em;
+    background-color: var(--accent);
+    border: none;
     color: var(--ink);
     text-decoration: none;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-shadow: none;
+    transition: background-color 0.2s ease;
   }
 
   a.email:hover,
   a.email:focus-visible {
-    background-color: var(--ink);
-    color: #241b2c;
+    background-color: var(--accent-hover);
   }
 
   a.email:focus-visible {
     outline: 2px solid var(--ink);
-    outline-offset: 4px;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 6vh 7vw; }
+    main { max-width: 100%; }
   }
 
   @media (prefers-reduced-motion: reduce) {
